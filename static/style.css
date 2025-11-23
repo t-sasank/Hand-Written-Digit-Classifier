@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top, #2b2f77, #050611 60%);
+    color: #f5f5f5;
+}
+
+.app {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 16px 40px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.1rem;
+    letter-spacing: 0.03em;
+}
+
+.subtitle {
+    margin-top: 8px;
+    color: #cfcfe6;
+    font-size: 0.95rem;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.chip {
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.8rem;
+    background: rgba(8, 11, 40, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.main-layout {
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.panel {
+    flex: 1;
+    min-width: 280px;
+}
+
+.panel h2 {
+    margin: 0 0 8px 2px;
+    font-size: 1.2rem;
+}
+
+.card {
+    background: rgba(13, 17, 48, 0.95);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255,255,255,0.04);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.hint {
+    margin-top: 4px;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    color: #a8abc9;
+}
+
+.canvas-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 8px;
+}
+
+canvas {
+    background: #ffffff;       /* white pad */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+    border: 2px solid #1f234a;
+    touch-action: none;        /* for better touch drawing */
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: none;
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease;
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, #4c6fff, #9f7bff);
+    color: white;
+    box-shadow: 0 8px 18px rgba(80, 112, 255, 0.45);
+}
+
+.btn.secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e0e3ff;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.u-margin-top {
+    margin-top: 10px;
+}
+
+#imageUpload {
+    width: 100%;
+    padding: 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(4, 6, 28, 0.9);
+    color: #ddd;
+    font-size: 0.85rem;
+}
+
+.placeholder {
+    margin: 0;
+    padding: 12px;
+    text-align: center;
+    color: #a3a6cf;
+    font-size: 0.9rem;
+}
+
+.pred-main {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.label {
+    font-size: 0.85rem;
+    color: #a8abc9;
+    margin-bottom: 4px;
+}
+
+.digit-big {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.confidence {
+    margin: 4px 0 0;
+    font-size: 0.9rem;
+}
+
+.votes-label {
+    margin: 8px 0 4px;
+    font-size: 0.82rem;
+    color: #a8abc9;
+}
+
+.votes-box {
+    margin: 0;
+    background: rgba(4, 6, 28, 0.9);
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 0.8rem;
+    max-height: 120px;
+    overflow-y: auto;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.conf-table-wrapper {
+    margin-top: 8px;
+}
+
+.conf-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+
+.conf-table th,
+.conf-table td {
+    padding: 6px 8px;
+    text-align: left;
+}
+
+.conf-table thead {
+    background: rgba(255,255,255,0.06);
+}
+
+.conf-table tbody tr:nth-child(odd) {
+    background: rgba(255,255,255,0.03);
+}
+
+.conf-table tbody tr:nth-child(even) {
+    background: rgba(255,255,255,0.01);
+}
+
+.hidden {
+    display: none;
+}
+
+.loading-text {
+    text-align: center;
+    color: #d0d2ff;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.8rem;
+    color: #888bb2;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .main-layout {
+        flex-direction: column;
+    }
+
+    .pred-main {
+        flex-direction: column;
+    }
+
+    .digit-big {
+        font-size: 2.3rem;
+    }
+}

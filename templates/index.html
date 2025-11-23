@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Handwritten Digit Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="app">
+    <header class="header">
+        <h1>Handwritten Digit Classifier</h1>
+        <p class="subtitle">
+            Draw or upload a digit and let the models predict it with high accuracy.
+        </p>
+    </header>
+
+    <section class="features">
+        <div class="chip">Draw digits on canvas</div>
+        <div class="chip">Upload PNG, JPG, JPEG</div>
+    </section>
+
+    <main class="main-layout">
+        <!-- Left: Canvas + Upload -->
+        <section class="panel">
+            <h2>Input</h2>
+
+            <div class="card">
+                <h3>Draw a Digit</h3>
+                <p class="hint">Use your mouse or finger to draw a digit from 0–9.</p>
+                <div class="canvas-wrapper">
+                    <canvas id="canvas" width="280" height="280"></canvas>
+                </div>
+                <div class="button-row">
+                    <button id="clearBtn" class="btn secondary">Clear</button>
+                    <button id="predictCanvasBtn" class="btn primary">Predict</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Upload an Image</h3>
+                <p class="hint">Accepted formats: PNG, JPG, JPEG</p>
+                <input type="file" id="imageUpload" accept="image/png, image/jpeg" />
+                <button id="predictUploadBtn" class="btn primary u-margin-top">
+                    Predict
+                </button>
+            </div>
+        </section>
+
+        <!-- Right: Results -->
+        <section class="panel">
+            <h2>Results</h2>
+
+            <div class="card" id="resultsCard">
+                <div id="noPrediction">
+                    <p class="placeholder">No prediction yet. Draw or upload a digit to get started.</p>
+                </div>
+
+                <div id="predictionSection" class="hidden">
+                    <div class="pred-main">
+                        <div>
+                            <p class="label">LeNet CNN Prediction</p>
+                            <p class="digit-big" id="lenetDigit">-</p>
+                            <p class="confidence">
+                                Confidence: <span id="lenetConf">-</span>%
+                            </p>
+                        </div>
+                        <div>
+                            <p class="label">Ensemble Prediction</p>
+                            <p class="digit-big" id="ensembleDigit">-</p>
+                            <p class="votes-label">Models' Votes:</p>
+                            <pre class="votes-box" id="votesBox"></pre>
+                        </div>
+                    </div>
+
+                    <div class="conf-table-wrapper">
+                        <h3>Confidence Scores (0–9)</h3>
+                        <table class="conf-table">
+                            <thead>
+                            <tr>
+                                <th>Digit</th>
+                                <th>Confidence</th>
+                            </tr>
+                            </thead>
+                            <tbody id="confTableBody">
+                            <!-- Filled by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="loading" class="hidden">
+                    <p class="loading-text">Predicting... ⏳</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Built with using Flask</p>
+    </footer>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
