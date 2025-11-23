@@ -1,6 +1,7 @@
 ## Project Structure:
 
-Project_file/
+```text
+hand_written_digit_classifier_app/
 │
 ├── app.py
 ├── models/
@@ -16,3 +17,4 @@ Project_file/
 │
 └── templates/
     └── index.html
+
