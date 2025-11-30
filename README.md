@@ -1,3 +1,9 @@
+#Project Details Drive link
+
+https://colab.research.google.com/drive/1EHudNJLAe3LlWZ3elT49ludWY0buUFNH?usp=drive_link
+
+[Drive Link](https://colab.research.google.com/drive/1EHudNJLAe3LlWZ3elT49ludWY0buUFNH?usp=drive_link)
+
 ## Project Structure:
 
 ```text
